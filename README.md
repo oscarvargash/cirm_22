@@ -1,4 +1,4 @@
-# Workshop on basic R programming skills 
+# Workshop on basic bash and R programming skills 
 
 > **NOTE** 
 > This was developed/organized for the CIRM workshop at Cal Poly Humboldt in the summer of 2022.  
