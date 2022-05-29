@@ -143,18 +143,18 @@ cd Documents
 Let's create a directory to keep our files organized
 
 ```
-mkdir test 1
+mkdir day 1
 ```
 What happened?
 
-The command line interprets `test` and `1` as different arguments.
+The command line interprets `day` and `1` as different arguments.
 
 ***From now on avoid using spaces in file and folder names, use _ instead***
 
 We can remove both unwanted directories by typing 
 
 ```
-rmdir 1 test 
+rmdir day 1 
 ```
 
 Now, let's create a new directory labeled `day_01` by typing:
@@ -195,8 +195,6 @@ cd
 
 You can see that the drag and drop method adds the absolute path of the folder instead of the relative path.
 
-You can infer, from the way the command line works, that spaces inside folder and file names can be problematic. For example, let's see what thappens when we try to create a folder "test 1" inside `week_01`
-
 > Change your flag to green if you are good to continue ![](img/green.jpeg)
 
 ### Creating and managing files
@@ -207,7 +205,7 @@ A practical way to create a file is to use the text editor `nano`. Let's create 
 
 ```
 cd ~/Documents/day_01
-nano personal_log_1.txt
+nano log.txt
 ```
 
 After excecuting the command nano will open and you can start adding text to your new file, let's type:
@@ -233,57 +231,58 @@ Finally press:
 If you `ls` your new file should appear there. We can print the contect of a file to the screen easily by typing:
 
 ```
-cat personal_log_1.txt
+cat log.txt
 ```
 
 `cat` is an useful program taht can be use to print the contents of any file to the screen. It can also be used to concatenate files.
 
-***TIP:*** When typing file and folder names you can press the `tab` key to autocomplete a name, notice that the letters typed have to be long enough to match only a single item. In this case just by typing `cat per` and then pressing `tab` we should be able to obtain the complete command desired.
+***TIP:*** When typing file and folder names you can press the `tab` key to autocomplete a name, notice that the letters typed have to be long enough to match only a single item. In this case just by typing `cat log` and then pressing <kbd>tab</kbd> we should be able to obtain the complete command desired.
 
 > Change your flag to green if you are good to continue ![](img/green.jpeg)
 
-It turns out that we want `personal_log_1.txt` inside a folder called `personal_entries`. First we need to create the directory by:
+It turns out that we want `log.txt` inside a folder called `personal_entries`. First we need to create the directory by:
 
 > Change your flag to yellow ![](img/yellow.jpeg)
 
 ```
-mkdir personal_entries
+mkdir personal
 ```
 
 Now we need to move our text file inside the new folder, notice that the command works like this `mv path_origin path_destination`.
 
 ```
-mv personal_log_1.txt personal_entries/
+mv log.txt personal/
 ```
 
-Check the file was moved by listing the contents of `personal_entries` typing:
+Check the file was moved by listing the contents of `personal` typing:
 
 ```
-ls personal_entries
+ls personal
 ```
 
-`mv` can also be used to rename files, let's remane `personal_log_1.txt` with `personal_log_001.txt`
+`mv` can also be used to rename files, let's remane `log.txt` with `log_001.txt`
 
 ```
-cd personal_entries
-mv personal_log_1.txt personal_log_001.txt
+cd personal
+mv log.txt log_01.txt
 ```
 
-Finally we can make a copy of `personal_log_001.txt` to create a second file:
+Finally we can make a copy of `log_001.txt` to create a second file:
 
 ```
-cp personal_log_001.txt personal_log_002.r
+cp log_01.txt log_02.r
 ```
 
 we can check the contents of the copied file:
 
 ```
-cat personal_log_002.r
+cat log_02.r
 ```
 
 Notice that regarding the extension of the file `.txt` / `.r` cat prints the contents of the file to the screen.
 
 > Change your flag to green if you are good to continue ![](img/green.jpeg)
+
 
 
 # Day one, afternoon
@@ -295,17 +294,31 @@ Once logged in the Linux machine, look for the Terminal, it is an icon that cont
 
 You can also write 'terminal' in the search bar of the main manu located in the left bottom of the operating system.
 
-### Using wild cards
+## Cancel a running process
 
 > Change your flag to yellow ![](img/yellow.jpeg)
 
+Sometimes an unwanted process happens in our terminal, perhaps we `cat` a really long file or we just insert a typo in the command line. We can simulate an unwanted process by just typing:
+
+```
+cat
+```
+
+You might think that the terminal is stuck, that we might have missed and argument for `cat`, but `cat`  is operating nevertheless. We can easily cancel the process by typing:
+
+<kbd>control</kbd> + <kbd>c</kbd>
+
+The process is canceled and the terminal is ready to receive a command.
+
+### Using wild cards
+
 In cases where directories contain thousands of files, it might not be practical to list all contents. Instead we can use wildcards * to list only files of interest.
 
-Let's make sure wer have a good number of files to perform the next exercise, make sure you are inside `week_01`. We are going to create 4 emtu files using the command 'touch'
+Let's make sure wer have a good number of files to perform the next exercise, make sure you are inside `day_01`. We are going to create 4 emtu files using the command 'touch'
 
 ```
 cd ~/Documentts/day_01
-touch log_01.txt log_02.txt script_01.r script_02.r
+touch log_1.txt log_2.txt script_1.r script_2.r
 ```
 
 We can list only files that end with ".txt"
@@ -330,10 +343,10 @@ Wild cards can also be used for the begining of files and for strings nested in 
 ls log*
 ```
 
-And we can list the files that contain the string "002":
+And we can list the files that contain the string "2.":
 
 ```
-ls *02*
+ls *2.*
 ```
 
 ### Removing files
@@ -341,7 +354,7 @@ ls *02*
 With great power comes great resposability! Files removed through the terminal are gone forever, they **DON'T** go to a trash bin from where they can be reinstated. You can remove a file just by typing:
 
 ```
-rm log_01.txt
+rm log_1.txt
 ```
 
 You can remove all the `.txt` files:
@@ -360,23 +373,17 @@ rm *.txt
 
 The terminal is a powerful to run programs, as you can analyze tons of data with only a single command. In this tutorial we will run several aplpications in the terminal and will learn the principles of automatizing data processing.
 
-### Looking at the quality of a file that contains DNA sequences obtanied using high-throughput-sequecing (also known as next-generation-sequencing)
-
-
-Before analysing the quality of the sequences we need to undertand the basics of [next-generation-sequencing](https://www.youtube.com/watch?v=fCd6B5HRaZ8)
-
-We will use FastQC quatify measure the quality of data in a file.
 Please download in your machine a compressed file with the data in the folder named `day_01`:
 
 ```
 cd ~Documents/day_01
-wget https://github.com/oscarvargash/biol_550_2022/raw/main/week_02/files/reads1.zip
+wget https://github.com/oscarvargash/cirm_22/tree/main/day_1/files/files.zip
 ```
 
 As you can see, this is a compressed file. We can decompressed by
 
 ```
-unzip reads1.zip
+unzip files.zip
 ls
 ```
 
@@ -395,22 +402,65 @@ rm *.zip
 We can try to get peek in the in the file to see what it is about. Print to the screen the first ten lines of the file by typing using the command `head`:
 
 ```
-head S1870_L008_R1_001.fastq.gz
+cat L008_R1.fastq
+```
+
+Since this is a large file, it is not useful to print it to the terminal. In general is always better to only print the top of the file:
+
+```
+head L008_R1.fastq
+```
+
+Or the bottom of the file:
+
+```
+tail L008_R1.fastq
 ```
 
 What did you see?
 
-It turns out that this is also a compressed file. `*.gz` is a common type of compression use in DNA analysis. Most bioinformatic programs can work with `*.gz` files, saving space in hard drives. We can look at the file without decompressing it by:
-
-```
-zcat S1870_L008_R1_001.fastq.gz | head
-```
-
-As you can see we are "piping" or passing with `|` the uncompressed text to `head`, which prints only the first ten lines of the file
-
 What is this file?
 
-We can use FastQC to evaluate the quality of the file. First should figure out how does FastQC works. Most programs have a help menu.
+<details>
+  <summary>Click to see an answer!</summary>
+  
+This is file produced by a next-generation squencing run using an Illumina machine. The text after the @ is the name of the sequence, the next line is the sequence itself, the third line is the quality of the sequence. 
+
+</details>
+
+We are interested in knowing how many sequeces are found in each file; how can we find out this?
+
+There is also program called `grep` that is able to search for specific words of characters. Furthermore, we know that every sequence in our file starts with `@`.
+
+```
+grep "@" L008_R1.fastq
+```
+
+Let's look at the manual
+
+```
+man grep
+```
+
+The following line of code is then able to count the number of `@` i nour file, and therefore the number of sequences in our file:
+
+```
+grep "@" L008_R1.fastq
+```
+
+## Exercise 1 
+
+How many sequences are found in the other three sequence files?
+Add these numbers to a text file in your folder using `nano`
+
+Check with your instructor or teaching assistant before going further
+
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
+
+
+## Using FastQC
+
+We can use FastQC to evaluate the quality of the file. First let's figure out how does FastQC works. Most programs have a help menu.
 
 ```
 fastqc -help
@@ -419,7 +469,7 @@ fastqc -help
 It seems that we can simply add the name of the file as as the first argument, and we then add `-o` (output) to specify where the program should write the report
 
 ```
-fastqc S1870_L008_R1_001.fastq.gz -o .
+fastqc L008_R1.fastq -o .
 ``` 
 
 Once it has finish you can list all files and see the output.
@@ -432,80 +482,19 @@ You can navigate with the mouse and open the html report in a web navigator
 
 Congrats!!! you have executed a program succesfully
 
-### Exercise 1
-
-Analyze the second file with FastQC. Upon completion of the analysis compare the results and decide which of the files contains reads with better quality. Submit your answer in CANVAS along with a brief explanation.
-
-> Change your flag to green if you are good to continue ![](img/green.jpeg)
-
-### Triming and cleaning reads
-
-> Add the yellow flag to the right corner of your laptop ![](img/yellow.jpeg)
-
-We will trim the reads found in the files from contaminants and low quality regions. We will use a suite of programs called `bbtools`, specifically we will use the program `bbduk.sh`. Let's call the program and see the help:
-
-```
-bbduk.sh -h
-```
-
-It seems that with bbduk.sh `-h` does not work. Let's follow the screen instruction and type
-
-```
-bbduk.sh
-```
-
-We want to trim contamintants found in the reference file `illumina_primers.fasta`. Let's take a look at the file 
-
-```
-cat ~/../../opt/bbmap/resources/adapters.fa
-```
-
-Now run bbduk:
-
-```
-bbduk.sh in=S1870_L008_R1_001.fastq.gz ref=~/../../opt/bbmap/resources/adapters.fa ktrim=r k=21 mink=11 hdist=2 ml=50 out=S1870_L008_R1_001.f.fastq.gz stats=statsf1.txt
-```
-
-`ktrim` indicates which side of the read should be trimmed
-`k` indicates the kamer size to look for contaminats, contaminants shorther than K will not be found
-`mink` looks for shorter kmers at the end of reads
-`hdist` indicates the number of mistmatches allowed in the kamer for matching to contaminants
-`ml` is the minimum lenght of a given read
-
-Now that we have removed contaminants we will remove regions of the reads with low quality scores
-
-```
-bbduk.sh in=S1870_L008_R1_001.f.fastq.gz ref=~/../../opt/bbmap/resources/adapters.fa qtrim=lr trimq=20 minlength=21 out=S1870_L008_R1_001.ft.fastq.gz stats=statst1.txt
-```
-
-`qtrim` indicates where to trim reads, in this case we are trming on both left and right
-`trimq` indicates the minimum phred score allowed
-`minlength` indicates the minimum lenght of a read allowed
-
-> Change your flag to green if you are good to continue ![](img/green.jpeg)
-
 ### Exercise 2
 
-Perform the filtering and trimming in the second file `*R2*`, then excute fastqc on both final files. Answer the following questions:
+Analyze the remaning files (protip: you can analyze all 4 files using a single line of code if you use a wildcard).
 
-1. Which file had more contaminants R1 or R2?
-2. Was there a significant difference after reads have been both trimmed and filtered when compared with the non-filtered ones? briefly explain
+Do the sequence numbers match your calculations with grep?
 
+Relatively are the files with low quality data base on the "Per base sequence quality"?
 
-<details>
-  <summary>ONLY AS A LAST RESOURCE, Click here to see the commands to analyze the data of exercise 2</summary>
-  
-```
-bbduk.sh in=S1870_L008_R2_001.fastq.gz ref=~/../../opt/bbmap/resources/adapters.fa ktrim=r k=21 mink=11 hdist=2 ml=50 out=S1870_L008_R2_001.f.fastq.gz stats=statsf2.txt
-
-bbduk.sh in=S1870_L008_R2_001.f.fastq.gz ref=~/../../opt/bbmap/resources/adapters.fa qtrim=lr trimq=20 minlength=21 out=S1870_L008_R2_001.ft.fastq.gz stats=statst2.txt
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
 
 
-fastqc S1870_L008_R1_001.ft.fastq.gz -o .
-fastqc S1870_L008_R2_001.ft.fastq.gz -o .
-```
-
-</details>
+Congrats, you have succesfully finish the introduction to bash tutorial !!!!!
+Here is a great resrouce for the future:
 
 ### Cheat sheet of linux commands
 
