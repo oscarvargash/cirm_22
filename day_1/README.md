@@ -312,9 +312,9 @@ The process is canceled and the terminal is ready to receive a command.
 
 ### Using wild cards
 
-In cases where directories contain thousands of files, it might not be practical to list all contents. Instead we can use wildcards * to list only files of interest.
+In cases where directories contain thousands of files, it might not be practical to list all contents. Instead we can use wildcards `*` to list only files of interest.
 
-Let's make sure wer have a good number of files to perform the next exercise, make sure you are inside `day_01`. We are going to create 4 emtu files using the command 'touch'
+Let's make sure wer have a good number of files to perform the next exercise, make sure you are inside `day_01`. We are going to create 4 emtu files using the command `touch`
 
 ```
 cd ~/Documentts/day_01
@@ -326,7 +326,7 @@ We can list only files that end with ".txt"
 ```
 ls *.txt
 ```
-How can we list only the files that end with ".r" ?
+How can we list only the files that end with `.r` ?
 
 <details>
   <summary>Click to see an answer!</summary>
@@ -337,13 +337,13 @@ ls *.r
 
 </details>
 
-Wild cards can also be used for the begining of files and for strings nested in the name of the files. For example we can list only files that start with "log":
+Wild cards can also be used for the begining of files and for strings nested in the name of the files. For example we can list only files that start with `log`:
 
 ```
 ls log*
 ```
 
-And we can list the files that contain the string "2.":
+And we can list the files that contain the string `2.`:
 
 ```
 ls *2.*
@@ -488,7 +488,7 @@ Analyze the remaning files (protip: you can analyze all 4 files using a single l
 
 Do the sequence numbers match your calculations with grep?
 
-Relatively are the files with low quality data base on the "Per base sequence quality"?
+Relatively which files have with low quality based on "Per base sequence quality"?
 
 > Change your flag to green if you are good to continue ![](img/green.jpeg)
 
