@@ -7,6 +7,10 @@
 To start this tutorial you need to be logged in the Linux virtual machine
 [vlinux.humboldt.edu](https://vlinux.humboldt.edu/)
 
+For best visualization we recomend:
+- Change the remote desktop to fit into the window
+
+
 ### Open terminal
 
 Once logged in the Linux machine, look for the Terminal, it is an icon that contains the characters '>\_'
