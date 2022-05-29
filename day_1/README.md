@@ -260,7 +260,7 @@ Check the file was moved by listing the contents of `personal` typing:
 ls personal
 ```
 
-`mv` can also be used to rename files, let's remane `log.txt` with `log_001.txt`
+`mv` can also be used to rename files, let's remane `log.txt` with `log_01.txt`
 
 ```
 cd personal
@@ -337,7 +337,7 @@ ls *.r
 
 </details>
 
-Wild cards can also be used for the begining of files and for strings nested in the name of the files. For example we can list only files that start with "personal":
+Wild cards can also be used for the begining of files and for strings nested in the name of the files. For example we can list only files that start with "log":
 
 ```
 ls log*
@@ -357,10 +357,10 @@ With great power comes great resposability! Files removed through the terminal a
 rm log_1.txt
 ```
 
-You can remove all the `.txt` files:
+You can remove all the `.r` files:
 
 ```
-rm *.txt
+rm *.r
 ```
 
 ***EXTREME CAUTION `rm *` will remove ALL the files inside the directory forever!***
@@ -377,7 +377,7 @@ Please download in your machine a compressed file with the data in the folder na
 
 ```
 cd ~Documents/day_01
-wget https://github.com/oscarvargash/cirm_22/tree/main/day_1/files/files.zip
+wget https://github.com/oscarvargash/cirm_22/raw/main/day_1/files/files.zip
 ```
 
 As you can see, this is a compressed file. We can decompressed by
