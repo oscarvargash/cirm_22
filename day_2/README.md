@@ -1,7 +1,7 @@
 # Day 2, morning, Getting Started with R
 
 Based on a document created by: Jason Pienaar and Tom Miller
-Edited by: CCG 2021
+Edited by: CCG and OMV 2022
 
 ## Outline
 
@@ -39,7 +39,7 @@ Anything worth doing, from losing weight to getting a degree, takes time. Learni
 
 ## Accessing R 
 
-### on Cal Poly Humboodt labs:
+### on Cal Poly Humboldt labs:
 Although you can download in your personal computer (and you are encouraged to do so – find instructions on Canvas), we will work on a standardized set up on the school lab. 
 
 > Add the yellow flag to the right corner of your monitor ![](img/yellow.jpeg)
