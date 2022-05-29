@@ -445,7 +445,7 @@ man grep
 The following line of code is then able to count the number of `@` i nour file, and therefore the number of sequences in our file:
 
 ```
-grep "@" L008_R1.fastq
+grep -c "@" L008_R1.fastq
 ```
 
 ## Exercise 1 
@@ -491,7 +491,6 @@ Do the sequence numbers match your calculations with grep?
 Relatively are the files with low quality data base on the "Per base sequence quality"?
 
 > Change your flag to green if you are good to continue ![](img/green.jpeg)
-
 
 Congrats, you have succesfully finish the introduction to bash tutorial !!!!!
 Here is a great resrouce for the future:
