@@ -1,4 +1,4 @@
-# Tutorial 1: Getting Started with R
+# Day 2, morning, Getting Started with R
 
 Based on a document created by: Jason Pienaar and Tom Miller
 Edited by: CCG 2021
@@ -39,13 +39,12 @@ Anything worth doing, from losing weight to getting a degree, takes time. Learni
 
 ## Accessing R 
 
-### on HSU virtual labs:
-Although you can download in your personal computer (and you are encouraged to do so – find instructions on Canvas), we will work on a standardized set up on the school virtual lab (vlabs). To access vlabs:
-* [Click Here] (https://vlab.humbold.edu)
-* Access ‘vLab- Fall 2020’ or 'Desktops'
-* Log in with your HSU information
-* Go to the search icon to the bottom left and search : ‘Rstudio’
-* Open R studio
+### on Cal Poly Humboodt labs:
+Although you can download in your personal computer (and you are encouraged to do so – find instructions on Canvas), we will work on a standardized set up on the school lab. 
+
+> Add the yellow flag to the right corner of your monitor ![](img/yellow.jpeg)
+
+* We can open Rstudio by simply typing `Rstudio` in the search bar of the OS.
  
 ### Obtaining your own copy of R
 Both PC and Macintosh versions of R can be downloaded from the [R home page] (http://www.r-project.org/)
@@ -121,9 +120,12 @@ Run the following calculations:
 
 And: The year you were born – today’s date (just the day) * your favorite number
 
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
 
 ## R functions
 R is a functional programming language meaning that pretty much everything we do in R is in terms of functions. R includes hundreds of built-in functions for mathematical calculations (including matrix algebra, which is extremely useful in statistics), data analyses, graphing, etc. Values passed to functions are specified within parenthesis after the function name. Here are some simple examples to try:
+
+> Add the yellow flag to the right corner of your monitor ![](img/yellow.jpeg)
 
 ```
 log(100)
@@ -179,10 +181,14 @@ Vector2[21]
 
 returns the 21st element of the vector.
 
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
+
 ### Lists
 While vectors only contain numbers, lists can contain mixed types of elements in R. You can find numbers, strings (characters), logical arguments and even lists nested within lists. 
 
 Create a list using the following code:
+
+> Add the yellow flag to the right corner of your monitor ![](img/yellow.jpeg)
 
 ```
 list_data=list(color='red', vector=c(21,23,43), password=TRUE, Temperature=21.5)
@@ -223,6 +229,11 @@ Test them on the variables you have created so far: Vector1, Vector2, this.is.a.
 ## This is the end of the morning activity
 Good job! You have completed the first session of our Bioinformatics Workshop. We will be meeting again for the afternoon session. **Make sure you save your files to the cloud (they will be deleted from vlab once you log out!)**. You can also directly submit to Canvas if you have completed all the work. See you soon!
 
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
+
+
+# Day 2, Afternoon, importing files to R, dataframes
+
 ## Importing Files
 Three Steps for Reading Files or Data Into R:
  
@@ -230,19 +241,19 @@ Three Steps for Reading Files or Data Into R:
 First however, we need to tell R which directory we are using. This is equivalent to answering the question: where are your files in the computer? When using R, it is much easier to have all the files you are going to use organized in one folder or directory.
  
 Here, I will provide guidelines to save your progress in your google drive and access a working folder in the school computer via ‘vlab’. I will insist we all do this for now to have the same set up for the purpose of the class. However, if working on your own computer, you can save your progress in the same folder you direct R to (see In your computer section below).
- 
-#### Google drive
-Make a folder called ‘Rtutorials_MicrobEcol2020_drive’. Use it to save and store files with your progress in R tutorials.
- 
-#### In vlab
-Once you have logged in, navigate to ‘Documents’ and create a folder specifically for your R tutorial and associated files called ‘Rtutorials_MicrobEcol2020’. You may need to do this every time you log into vlab, so make sure you any progress you make back into your google drive folders.
- 
-Once you have a folder, tell R where it is. Open Rstudio, navigate to the menu at the top of the screen and click on Session (should be in the center). Select Set writing directory and then Choose Directory… in order to find the your folder. Navigate to Documents and select your newly created folder  ‘Rtutorials_MicrobEcol2020’.
- 
-#### (optional) In your computer
+
+> Add the yellow flag to the right corner of your monitor ![](img/yellow.jpeg)
+
+#### In your computer
 Create a folder, provide a clear name and save it in a place you know well. Save all files related to these R exercises within this folder. Use the above instructions to set the writing directory within Rstudio.
+
+#### Other options:
+
+* Google drive: make a folder called ‘Rtutorials_MicrobEcol2020_drive’. Use it to save and store files with your progress in R tutorials.
  
-#### (advanced) Use the command to set the writing directory
+* In vlab: once you have logged in, navigate to ‘Documents’ and create a folder specifically for your R tutorial and associated files called ‘Rtutorials_MicrobEcol2020’. You may need to do this every time you log into vlab, so make sure you any progress you make back into your google drive folders. Once you have a folder, tell R where it is. Open Rstudio, navigate to the menu at the top of the screen and click on Session (should be in the center). Select Set writing directory and then Choose Directory… in order to find the your folder. Navigate to Documents and select your newly created folder  ‘Rtutorials_MicrobEcol2020’.
+ 
+* Use the command to set the writing directory
 setwd() function in R determines the writing directory (see help(setwd)))
 getwd() function in R tells you where the writing directory is located
  
@@ -269,6 +280,7 @@ There are a few ways to enter this data into R. Here we will explore importing d
 * The simplest type of file to read into R is a plain text file created in notepad. However, most of us don’t use simple text files, but instead use something like Excel for entry and database management. Standard Excel files (“.xls”) have lots of extra hidden coding that is necessary for Excel, but makes it difficult for other programs to read these files. We could cut and paste the Excel file data into a text editor, but this would be involving a 3rd program as a translator between two others, which is getting a tad ridiculous. So, let’s consider some more practical steps.
 * Most programs can write the output as text files. Then, the text files can be read straight into R. R simply requires that there be “white space” between the variables in each row of the data: this may be tabs or actual spaces. So, simply use “Save As . . .” to save the data file from Excel as “Text (tab delimited)” and name it “Table1R.txt”. To be able to compare good tables to poorly formatted tables, do this again for your corrected table and name it “Table1R.fixed.txt“. Then, the file can be read into R using the following commands (we will call the data frame “bacteria”):
 
+
 ```
 bacteria = read.table(“TableR1.txt”, header=T)
 ```
@@ -286,9 +298,14 @@ Now that you have interpreted and reflected on the error message, let’s contin
 ```
 bacteria = read.table(“TableR1.fixed.txt”, header=T)
 ```
+
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
+
 This command finds the file and recognizes that there are labels (“headers”) for each variable. The “T” stands for TRUE and must be capitalized. The second command (“bacteria”) simply causes the file to be printed. The data file will now be available for use in R.
 
 You should no be able to take a look at your data frame in R, by just typing the name of the object
+
+> Add the yellow flag to the right corner of your monitor ![](img/yellow.jpeg)
 
 ```
 bacteria
@@ -341,6 +358,229 @@ I guess you have to use your own column names…
 5. 	I guess one could name this scatter plot corrie.lation (this is a very sad joke and should not be taken too seriously). One can label axes and the graph itself in a variety of ways. Try using the “help(plot)” function to figure out how to correctly label the axes and create a title for the graph.
 6. 	Create a histogram of the whos.there variable using the function hist.
 
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
 
+# Day 2, bonus using Dplyr, basic stats, and loops
+
+The power of coding relies heavily on being able to analyze large datasets with few lines of code. A good package to work with table-like datasets is dplyr. We will import a dataset of plant occurrences and then calculate several statistics on those.
+
+## Filtering data and getting some basic statistics
+
+> Add the yellow flag to the right corner of your monitor ![](img/yellow.jpeg)
+
+- First create a folder in your documents or desktop named `day_2`.
+
+- Then download the following dataset and add it to the folder. The best way to do this is to access this github page from inside vlab.
+
+[Abronia dataset](https://www.dropbox.com/s/z583pnzvyail7pr/abronia_2.csv?dl=0) 
+
+- Now that you have `abronia_2.csv` inside the folder `day_2` go to Rstudio and open a new script.
+
+- Save the new script as `abronia.r` inside the folder `day_2`
+
+### Installing our first R package
+
+R functions like a dock in which you can install packages for analyses. A very useful package for working with dataframes is dplyr.
+
+```
+install.packages("dplyr")
+```
+
+Now that the library is installed we can load it.
+```
+library(dplyr)
+```
+
+Now we need to tell R about your working folder. Look for the address of one of your files inside your `day_2` folder,
+
+```
+setwd("C:/Users/ov20/Documents/cirm_2021/day_2")
+```
+
+We can always check our working directory by typing:
+```
+getwd()
+dir()
+```
+
+Now we can import our dataset
+```
+data = read.csv("abronia_2.csv")
+```
+
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
+
+This dataframe is pretty large so there is no point in printing it all to the screen. To check that our dataset has been successfully imported, we can print to screen only the “head” of the dataset.
+
+> Add the yellow flag to the right corner of your monitor ![](img/yellow.jpeg)
+
+```
+head(data)
+```
+
+Because this is a dataset with numerous columns, R will stack the rows on top of each other.
+
+Similarly, we can print the bottom or tail of the dataset, asking R to print the 10 last rows.
+
+```
+tail(data, 10)
+```
+
+We can see here that we have more than 17 thousand records in our dataset.
+
+We can also see the structure of the dataframe by doing:
+
+```
+str(data)
+```
+
+Our dataset contains museum and inaturalist records for all the species of sand verbenas (a charismatic plant that can be found at the dunes in Arcata). We are interested in studying the distribution of sand verbenas, and therefore we would like to know several statistics about the latitudinal range for the genus and species.
+
+Since we are interested in describing the latitudinal range for these plants, a first calculation is to find the mean of the latitude.
+
+```
+mean(data$decimalLatitude)
+```
+
+Opps!!!!
+
+We can see that there is something wrong with the command or the dataset, any ideas what can be wrong? Let's check the last 100 values of the Latitude:
+
+```
+tail(data$decimalLatitude, 100)
+```
+
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
+
+We can see that there are multiple rows without values “NAs”.  with dplyr we can easily filter out those. Let's create a new dataframe with only data that has latitude `geodata`.
+
+> Add the yellow flag to the right corner of your monitor ![](img/yellow.jpeg)
+
+```
+geodata = data %>% filter(!is.na(decimalLatitude))
+```
+
+Dplyr uses the following syntax:
+
+NEWDATASET = DATASET %>% FILTER
+
+In our case, we want to keep numeral entries; for this we are using the function `filter` and the function `is.na`. If we were to use `data %>% filter(is.na(decimalLatitude))`, we will only keep the rows with NAs, which is the opposite of what we want. The character `!` means “is not”, asking R keep in the new dataframe everything that is not NA.
+
+
+Let’s check that our dataset does not have NAs in the latitude column:
+
+```
+tail(geodata$decimalLatitude, 100)
+```
+
+Now let’s try to calculate the mean latitude for all species combined.
+```
+mean(geodata$decimalLatitude)
+```
+
+***NOTE*** There are always numerous ways of solving a problem while coding; another way of calculating the mean while ignoring the NAs is `mean(data$decimalLatitude, na.rm = T)`. Working with a clean dataset usually helps to run code more efficiently, so we will keep working with `geodata`.
+
+We can also calculate other statistics on the latitude.
+
+```
+median(geodata$decimalLatitude)
+min(geodata$decimalLatitude)
+```
+
+## Exercise 1.
+Using the filter `filter(species == "Species of interest")` (notice that this is just filter of the line necessary for the line). Find the maximum longitude for “Abronia latifolia”.
+
+<details>
+  <summary>Click to see an answer!</summary>
+  
+```
+abla = geodata %>% filter(species == "Abronia latifolia")
+max(abla$decimalLongitude)
+```
+  
+</details>
+
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
+
+## Basic plotting and model testing
+We can easily compare the latitudinal range among species using a boxplot.
+
+> Add the yellow flag to the right corner of your monitor ![](img/yellow.jpeg)
+
+```
+boxplot(geodata$decimalLatitude ~ geodata$species, las = 2)
+```
+
+We will use the dataset of Abronia latifolia (our local sand verbena) that you subsetted in the past exercise for plotting and fitting a linear model. Slide the bar to the right to see the answer for subsetting the data.
+
+<details>
+  <summary>Click to see the code!</summary>
+  
+```
+abla = geodata %>% filter(species == "Abronia latifolia")
+```
+  
+
+</details>
+
+We can start by plotting the latitude 
+```
+plot(abla$decimalLatitude)
+```
+
+We can see that when we plot only latitude our X axis represents the index number inside the vector created by calling only the latitude.
+
+Another way of viewing our data is by creating a histogram of the latitude.
+
+```
+hist(abla$decimalLatitude)
+```
+
+In a similar fashion, we can inspect the longitude data
+
+```
+plot(abla$decimalLongitude)
+hist(abla$decimalLongitude)
+```
+
+We can also plot latitude and longitude in a single plot, which in this case is pretty much a basic map.
+
+```
+plot(abla$decimalLongitude, abla$decimalLatitude)
+```
+What do you see?
+
+Just for fun, we can test whether or not we can predict the latitude by the longitude. ***Note*** This test might not be appropriate because we are not sure if our data is normal. 
+```
+model1 = lm(abla$decimalLatitude ~ abla$decimalLongitude)
+summary(model1)
+```
+
+We can see the fit of the model by plotting
+```
+plot(abla$decimalLongitude, abla$decimalLatitude)
+abline(model1)
+```
+
+> Change your flag to green if you are good to continue ![](img/green.jpeg)
+
+## Optional Exercise: advance plotting
+
+Ggplot can create advance figures. Install ggplot and plot the latitude of all species in a single figure color-coded by species. Adapt the following code to our data:
+
+https://ggplot2.tidyverse.org/
+
+<details>
+  <summary>Click to see an answer!</summary>
+  
+```
+install.packages("tidyverse")
+install.packages("ggplot2")
+library(ggplot2)
+
+ggplot(geodata, aes(decimalLongitude, decimalLatitude, colour = species)) + geom_point()
+
+```
+ 
 
 

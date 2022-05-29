@@ -1,4 +1,4 @@
-# Day one Morning
+# Day one, Morning
 
 > Add the yellow flag to the right corner of your laptop ![](img/yellow.jpeg)
 
@@ -465,6 +465,8 @@ Check with your instructor or teaching assistant before going further
 ## Using FastQC
 
 We can use FastQC to evaluate the quality of the file. First let's figure out how does FastQC works. Most programs have a help menu.
+
+> Change your flag to yellow ![](img/yellow.jpeg)
 
 ```
 fastqc -help
