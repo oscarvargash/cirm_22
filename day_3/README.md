@@ -2,7 +2,7 @@
 
 ## Runing a Seurat tutorial
 
-Please log into https://vlab.humboldt.edu and create a working directory `day_3`.
+Please log into your lab computer and create a working directory `day_3`. Alternatively you can login into https://vlab.humboldt.edu if working remotely.
 
 You first need to download the data to `day_3` from the tuorial found here https://satijalab.org/seurat/articles/pbmc3k_tutorial.html
 
