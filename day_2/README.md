@@ -350,11 +350,11 @@ Have fun with this one:
 2. 	Save this as a text file (Text (tab delimited)) named corrie.txt.
 3. 	Open R and create a data frame of the data in corrie.txt named corrie.who.
 4. 	Let’s use this data a bit. Before we can use the data, make sure you have used the
-attach function, because this allows us to now just use column names.
->attach(corrie.who)
-To create a scatter plot of the two variables in your file, use the plot function.
->plot(variable1,variable2)
-I guess you have to use your own column names…
+attach function, because this allows us to now just use column names.  
+>attach(corrie.who)  
+To create a scatter plot of the two variables in your file, use the plot function.  
+>plot(variable1,variable2). 
+make sure you use your own column names instead of variable1, variable2.  
 5. 	I guess one could name this scatter plot corrie.lation (this is a very sad joke and should not be taken too seriously). One can label axes and the graph itself in a variety of ways. Try using the “help(plot)” function to figure out how to correctly label the axes and create a title for the graph.
 6. 	Create a histogram of the whos.there variable using the function hist.
 
